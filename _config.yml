@@ -7,6 +7,11 @@ baseurl: ""
 url: "blog.mlewandowski.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: m_lewand
 github_username:  mlewand
+author:
+  name: "Marek Lewandowski"
+  email: "code@mlewandowski.com"
+  twitter: "m_lewand"
+  github: "mlewand"
 
 # Build settings
 markdown: kramdown
@@ -15,8 +20,10 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rogue
 theme: minima
+paginate: 10
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
