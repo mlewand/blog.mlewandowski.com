@@ -1,0 +1,22 @@
+title: Mlewand blog
+email: code@mlewandowski.com
+description: > # this means to ignore newlines until "baseurl:"
+  A place where I'm sharing thoughts related to my programming
+  experience.
+baseurl: ""
+url: "blog.mlewandowski.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: m_lewand
+github_username:  mlewand
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rogue
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
