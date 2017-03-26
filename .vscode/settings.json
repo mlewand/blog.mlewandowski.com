@@ -3,5 +3,10 @@
 	"markdownlint.config": {
 		"MD013": false,
 		"MD041": false
+	},
+	"search.exclude": {
+		"**/_site/**": true,
+		"**/node_modules": true,
+		"**/bower_components": true
 	}
 }

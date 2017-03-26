@@ -1,22 +1,29 @@
+# Site Settings
 title: Mlewand blog
-email: code@mlewandowski.com
-description: > # this means to ignore newlines until "baseurl:"
+tagline: a minimalist Jekyll theme
+description:
   A place where I'm sharing thoughts related to my programming
   experience.
 baseurl: ""
-url: "blog.mlewandowski.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: m_lewand
-github_username:  mlewand
+url: #"https://lenpaul.github.io"
+github:
+  url: #"https://lenpaul.github.io/Lagrange"
+author:
+  name: "Marek Lewandowski"
+  email: "code@mlewandowski.com"
+  twitter: "m_lewand"
+  github: "mlewand"
+navigation:
+- title: About
+  url: /about
+- title: Archives
+  url: /archives
+
+paginate: 10
+disqus: #"your-disqus"
 
 # Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter: rogue
-theme: minima
-gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
+highlighter: rouge
+permalink: none
+gems: [jekyll-paginate]
