@@ -16,8 +16,8 @@ author:
 navigation:
 - title: About
   url: /about
-- title: Writing
-  url: /writing
+- title: Archives
+  url: /archives
 
 paginate: 10
 disqus: #"your-disqus"
