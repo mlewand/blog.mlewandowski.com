@@ -9,5 +9,7 @@ Professionally I've been a programmer since 2009, while my hobby-programming jou
 
 Currently I'm a CKEditor 4 Lead Developer at [CKSource](http://cksource.com/).
 
-You can always find me at GitHub: {% include icon-github.html username="mlewand" %} / [mlewand](https://github.com/mlewand)
-Sometimes I also visit [StackOverflow](http://stackoverflow.com/users/2332383/marek-lewandowski).
+You can always:
+* Find my open-source work on GitHub: [mlewand](https://github.com/mlewand)
+* Poke me on Twitter: [@mlewand](https://twitter.com/m_lewand)
+* See some of my answers at [StackOverflow](https://stackoverflow.com/users/2332383/marek-lewandowski)
