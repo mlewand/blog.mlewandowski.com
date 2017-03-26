@@ -20,7 +20,7 @@ navigation:
   url: /archives
 
 paginate: 10
-disqus: #"your-disqus"
+disqus: "mlewand-blog"
 
 # Build settings
 markdown: kramdown
