@@ -104,7 +104,7 @@ By default it will be created with some standard/preset content, we'll override 
       "port": 9333,
       "pathMapping": {
         "/": "${workspaceRoot}",
-        "/base/": "${workspaceRoot}/test/"
+        "/base/": "${workspaceRoot}/"
       }
     }
   ]
