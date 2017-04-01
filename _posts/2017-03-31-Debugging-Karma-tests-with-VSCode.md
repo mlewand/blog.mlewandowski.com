@@ -19,7 +19,7 @@ While adjusting tests I found one skipped failing test, and since I was totally 
 
 All right, so in order to get this going we'll need three things:
 
-1. (Obiously) VSCode installed on our desktop.
+1. (Obviously) VSCode installed on our desktop.
 1. (Obviously) a project using Karma.
 1. [debugger-for-chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension.
 
@@ -37,12 +37,12 @@ So first off install Yeoman and the generator:
 npm install -g yo generator-karma
 ```
 
-Then make a directory for your project and use generator. Note that I'm explicitly marking that I want to use Karma with Chrome in `--browsers` argument, otherwise PhantomJS would be installed.
+Then make a directory for your project and use generator. Note that I'm explicitly marking that I want to use Karma with Chrome in `--browsers` argument, otherwise PhantomJS would be installed. To see information on other arguments, see [generator-karma docs](https://github.com/yeoman/generator-karma/blob/master/readme.md).
 
 ```bash
 mkdir karma-and-vscode-debugging
 cd karma-and-vscode-debugging
-yo karma --browsers Chrome
+yo karma --browsers "Chrome" --app-files "src/**/*.js" --test-files "test/**/*.js" --base-path ".."
 ```
 
 Let it create all the necessary files and download the dependencies. Once that's done you want to open it's config with VSCode, so just use:
@@ -117,23 +117,26 @@ Note how config specifies `pathMapping` property, as by default Karma will serve
 
 Configuration is done. Now it's time to use it in practice.
 
-Firstly go back to `test/karma.conf.js` file and edit `files` property - so that Karma knows what files should be served, like so:
+Add a dummy file that will create a global `myFunction` function.
 
 ```javascript
-  // list of files / patterns to load in the browser
-  files: [
-    '**/*.js'
-  ],
+window.myFunction = function( e ) {
+  if ( e >= 10 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 ```
 
-Now let's create an actual test.
+Save it as `src/myFunction.js`. Now let's create an actual test.
 
 ```javascript
 describe( "A suite is just a function", function() {
   it( "and so is a spec", function() {
-    let a = true;
+    let res = myFunction( 15 );
 
-    expect( a ).toBe( true );
+    expect( res ).toBe( true );
   } );
 } );
 ```
@@ -149,12 +152,12 @@ Enable debugger using either:
 * `f5` hotkey,
 * "Start debugging" button in Debug panel.
 
-Now the fun part! Put a breakpoint in `test/example.js` file, say at 5th line. And just press `ctrl/cmd+r` to refresh browser window attached to the debugger. As it gets to your line it will stop the execution, and let you inspect your variables and do all your debugging business.
+Now the fun part! Put a breakpoint in `test/example.js` file, say at 3rd line. And just press `ctrl/cmd+r` to refresh browser window attached to the debugger. As it gets to your line it will stop the execution, and let you inspect your variables and do all your debugging business.
 
 ## Conclusions
 
 I have placed all the files in [karma-and-vscode-debugging](https://github.com/mlewand/karma-and-vscode-debugging) repository, so you can check it out for full sources.
 
-At this point you might want to customize your paths, as for instance I like to have `karma.conf.js` file sitting in the root directory. So after moving the file I need to update `files` property of `karma.conf.js` and `pathMapping` of `.vscode/launch.json` file. In case you have troubles matching the files use [`.scripts` debugger command](https://github.com/Microsoft/vscode-chrome-debug#the-scripts-command) for easier troubleshooting.
+At this point you might want to customize your paths, as for instance I like to have `karma.conf.js` file sitting in the root directory. So after moving the file I need to adjust `basePath` property of `karma.conf.js` and `pathMapping` of `.vscode/launch.json` file. In case you have troubles matching the files use [`.scripts` debugger command](https://github.com/Microsoft/vscode-chrome-debug#the-scripts-command) for easier troubleshooting.
 
 You also might want to have karma instance automatically started if not running, but I guess I'll cover it some time later.
