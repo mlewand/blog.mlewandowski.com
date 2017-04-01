@@ -8,9 +8,9 @@ title: Debugging Karma tests with VSCode
 
 After talking with one fellow programmer I decided to get back to my old mouselessNavigator chrome extension. The code was not maintained for couple of years, and it was written in good old ECMAScript 3 spirit.
 
-The extension is working heavily with DOM, and since I'd like to push it to different browsers than Chrome it made sense to try out [Karma](https://karma-runner.github.io). Since I had already some decent unit tests in the project, this meant that I'll have to port these tests to Karma.
+The extension is working heavily with DOM, and since I'd like to also push it to browsers other than Chrome, it made sense to try out [Karma](https://karma-runner.github.io) for cross browser local testing. Since I had already some decent unit tests in the project, this meant that I'll have to port these tests to Karma.
 
-While adjusting tests I found one skipped failing test, and since I was totally unfamiliar with code base, I decided that the sooner I'll use debugger, the more benefits I'll have - as I _really_ love VSCode's debugger. In case you need more information on this see:
+While adjusting tests I found one skipped failing test, and since I was totally unfamiliar with the code base, I decided that the sooner I'll use debugger, the more benefits I'll have - as I really, _really_ love VSCode's debugger. In case you need more information on this see:
 
 * https://code.visualstudio.com/docs/introvideos/debugging
 * https://code.visualstudio.com/docs/editor/debugging
@@ -19,9 +19,13 @@ While adjusting tests I found one skipped failing test, and since I was totally 
 
 All right, so in order to get this going we'll need three things:
 
+1. (Obiously) VSCode installed on our desktop.
 1. (Obviously) a project using Karma.
-1. VSCode installed on our desktop.
 1. [debugger-for-chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension.
+
+### VSCode Installation
+
+You can grab your installation file at [Visual Studio Code](https://code.visualstudio.com/) home page.
 
 ### Karma Project
 
@@ -46,12 +50,6 @@ Let it create all the necessary files and download the dependencies. Once that's
 ```bash
 code . test/karma.conf.js
 ```
-
-@todo: VSCode installation should be the first step :D
-
-### VSCode Installation
-
-@link install
 
 ### Debugger for Chrome Extension
 
@@ -152,3 +150,11 @@ Enable debugger using either:
 * "Start debugging" button in Debug panel.
 
 Now the fun part! Put a breakpoint in `test/example.js` file, say at 5th line. And just press `ctrl/cmd+r` to refresh browser window attached to the debugger. As it gets to your line it will stop the execution, and let you inspect your variables and do all your debugging business.
+
+## Conclusions
+
+I have placed all the files in [karma-and-vscode-debugging](https://github.com/mlewand/karma-and-vscode-debugging) repository, so you can check it out for full sources.
+
+At this point you might want to customize your paths, as for instance I like to have `karma.conf.js` file sitting in the root directory. So after moving the file I need to update `files` property of `karma.conf.js` and `pathMapping` of `.vscode/launch.json` file. In case you have troubles matching the files use [`.scripts` debugger command](https://github.com/Microsoft/vscode-chrome-debug#the-scripts-command) for easier troubleshooting.
+
+You also might want to have karma instance automatically started if not running, but I guess I'll cover it some time later.
