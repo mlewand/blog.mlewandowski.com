@@ -20,12 +20,16 @@ While adjusting tests I found one skipped failing test, and since I was totally 
 All right, so in order to get this going we'll need three things:
 
 1. (Obviously) VSCode installed on our desktop.
-1. (Obviously) a project using Karma.
 1. [debugger-for-chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension.
+1. (Obviously) a project using Karma.
 
 ### VSCode Installation
 
 You can grab your installation file at [Visual Studio Code](https://code.visualstudio.com/) home page.
+
+### Debugger for Chrome Extension
+
+You can install it simply by pressing `ctrl/cmd+p` and typing `ext install debugger-for-chrome` and hit `enter`.
 
 ### Karma Project
 
@@ -50,10 +54,6 @@ Let it create all the necessary files and download the dependencies. Once that's
 ```bash
 code . test/karma.conf.js
 ```
-
-### Debugger for Chrome Extension
-
-You can install it simply by pressing `ctrl/cmd+p` and typing `ext install debugger-for-chrome` and hit `enter`.
 
 ## Configuration
 
