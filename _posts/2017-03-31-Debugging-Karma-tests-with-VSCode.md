@@ -16,8 +16,8 @@ The extension is working heavily with DOM, and since I'd like to also push it to
 
 While adjusting tests I found one skipped failing test, and since I was totally unfamiliar with the code base, I decided that the sooner I'll use debugger, the more benefits I'll have - as I really, _really_ love VSCode's debugger. In case you need more information on this see:
 
-* https://code.visualstudio.com/docs/introvideos/debugging
-* https://code.visualstudio.com/docs/editor/debugging
+* [https://code.visualstudio.com/docs/introvideos/debugging](https://code.visualstudio.com/docs/introvideos/debugging)
+* [https://code.visualstudio.com/docs/editor/debugging](https://code.visualstudio.com/docs/editor/debugging)
 
 ## Preparation
 
