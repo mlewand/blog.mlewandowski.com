@@ -4,6 +4,10 @@ date: 2017-03-31 15:20:12 +0100
 title: Debugging Karma tests with VSCode
 ---
 
+tl;dr: I was able to put it as a video on YouTube, however it was my first video, and it started to take bit too much time, so it's not a super pro one:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lgMuiFKq9M4?rel=0" frameborder="0" allowfullscreen></iframe>
+
 ## Introduction
 
 After talking with one fellow programmer I decided to get back to my old mouselessNavigator chrome extension. The code was not maintained for couple of years, and it was written in good old ECMAScript 3 spirit.
