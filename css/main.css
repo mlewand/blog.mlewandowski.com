@@ -431,3 +431,14 @@ pre {
 .fa-codepen:hover {
 	color: black;
 }
+
+/* some customization CSS */
+h1 {
+  line-height: 1.1em;
+}
+
+.post-container aside {
+  margin-left: 1em;
+  opacity: 0.8;
+  font-style: italic;
+}
