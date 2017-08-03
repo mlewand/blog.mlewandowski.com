@@ -45,7 +45,7 @@ responsive_image:
   extra_images:
     - images/*-teaser.{jpeg,jpg}
 
-
+keep_files: ['.git']
 # Build settings
 markdown: kramdown
 highlighter: rouge
