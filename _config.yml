@@ -29,9 +29,9 @@ responsive_image:
 
   # [Optional, Default: []]
   sizes:
-    - width: 615  # [Required] How wide the resized image will be.
-    - width: 800
-    - width: 1200
+    - width: 615
+    - width: 1230
+    - width: 1845
 
   base_path: images/posts
   output_path_format: assets/resized/%{width}/%{basename}
