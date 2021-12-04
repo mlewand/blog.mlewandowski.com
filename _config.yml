@@ -50,4 +50,4 @@ keep_files: ['.git']
 markdown: kramdown
 highlighter: rouge
 permalink: none
-gems: [jekyll-paginate, jekyll-responsive-image]
+plugins: [jekyll-paginate]

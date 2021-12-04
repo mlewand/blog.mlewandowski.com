@@ -16,7 +16,7 @@ Since there's a great integration for Arduino IDE, we'll use that to create and 
 
 Before we start programming let's just quickly summarize what the Witty Mini provides in terms of the hardware.
 
-{% responsive_image path: images/posts/witty-mini/separated.jpg alt: "Witty Cloud Development board side by side with its USB board" %}
+![Witty Cloud Development board side by side with its USB board](images/posts/witty-mini/separated.jpg)
 
 * Main board - left side - this is where the ESP8266, WiFi microcontroller, sits on.
 * USB board - right side - that's where you plug your USB driver when uploading your code to the MCU.
@@ -50,11 +50,11 @@ All the instructions are always up to date in the [ESP8266 Arduino](https://gith
 
 1. Open Arduino IDE.
 1. Go to `File` / `Preferences` (or just press <kbd>ctrl</kbd> + <kbd>,</kbd>).
-{% responsive_image path: images/posts/witty-mini/arduino-ide-preferences.png alt: "Arduino IDE Preferences with ESP8266 board manager URL pasted" %}
+![Arduino IDE Preferences with ESP8266 board manager URL pasted](images/posts/witty-mini/arduino-ide-preferences.png)
 1. In "Additional Boards Manager URLs:" field you need to add a link `http://arduino.esp8266.com/stable/package_esp8266com_index.json`. In case you have already some value set, you can have multiple values as long as you'll separate them with commas.
 1. Save.
 1. Now go to Boards Manager: `Tools` / `Board: <boardName>`/ `Boards manager…` and type in ESP8266, install the matched pacakge.
-{% responsive_image path: images/posts/witty-mini/arduino-board-manager.png alt: "Arduino IDE Board Manager screen" %}
+![Arduino IDE Board Manager screen](images/posts/witty-mini/arduino-board-manager.png)
 
 ### First Sketch
 
@@ -62,19 +62,19 @@ Now we're ready for coding! First we'll simply use mighty _Blink_ example to kee
 
 Start by connecting the board to your computer. So slide the top part to the bottom one:
 
-{% responsive_image path: images/posts/witty-mini/boards-connected.jpg alt: "Upper and lower boards connected together" %}
+![Upper and lower boards connected together](images/posts/witty-mini/boards-connected.jpg)
 
 And connect the bottom usb board to your desktop. You'll see that it will use the default firmware, for me it's just lighting a green light.
 
-{% responsive_image path: images/posts/witty-mini/green-led.jpg alt: "Board with a green LED on" %}
+![Board with a green LED on](images/posts/witty-mini/green-led.jpg)
 
 Then open the _Blink_ example provided with ESP8266 Arduino IDE integration:
 
-{% responsive_image path: images/posts/witty-mini/blink-example.png alt: "Arduino IDE examples open, with Blink example highlighted" %}
+![Arduino IDE examples open, with Blink example highlighted](images/posts/witty-mini/blink-example.png)
 
 Now it's important to set the board type. There's no dedicated type for a "Witty Cloud Development" but "Generic ESP8266 Module" will do. Also you need to chose the correct port, in my case it is COM3.
 
-{% responsive_image path: images/posts/witty-mini/board-settings.png alt: "Arduino IDE with &quot;Generic ESP8266 Module&quot; highlighted on a board list" %}
+![Arduino IDE with &quot;Generic ESP8266 Module&quot; highlighted on a board list](images/posts/witty-mini/board-settings.png)
 
 <aside>
   Be careful, using a wrong library <strong>can brick your microcontroller</strong>! I used &quot;ESP-12E&quot; to blink <code>LED_BUILTIN</code> and rather than lighting LED it… bricked my board 😿.
@@ -124,11 +124,11 @@ What you need to do is just to **hold FLASH**, press and release RESET and relea
 
 As a result small blue LED will blink for a fraction of a second, and RGB diode will turn green-blue. Now you're ready to upload your sketch, go on and use `Sketch` \ `Upload` option (or if you feel like a keyboard hero just hit <kbd>ctrl</kbd> + <kbd>u</kbd> 😉).
 
-{% responsive_image path: images/posts/witty-mini/successful-compile.png alt: "Sketch upload progress in Arduino IDE" %}
+![Sketch upload progress in Arduino IDE](images/posts/witty-mini/successful-compile.png)
 
 And take a look at your board now it blinks red, great! Now that you know how to upload your sketches let us utilize the WiFi part!
 
-{% responsive_image path: images/posts/witty-mini/red-led.jpg alt: "The LED on microcontroller lights a red color" %}
+![The LED on microcontroller lights a red color](images/posts/witty-mini/red-led.jpg)
 
 ### WiFi Example
 
@@ -136,13 +136,13 @@ I found _WiFiScan_ example to be the simplest one in the package. It essentially
 
 First, go to `Examples` \ `ESP8266WiFi` \ `WiFiScan`:
 
-{% responsive_image path: images/posts/witty-mini/wifi-scan-example.png alt: "&quot;WiFiScan&quot; example focused in Arduino IDE" %}
+![&quot;WiFiScan&quot; example focused in Arduino IDE](images/posts/witty-mini/wifi-scan-example.png)
 
 Make sure your board is connected and that you pressed FLASH, RESET switch sequence just as in the previous example. After that press <kbd>ctrl</kbd> + <kbd>u</kbd> to compile and upload the sketch.
 
 Once the sketch is uploaded just press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>m</kbd> to open up a serial port monitor. You'll see that your ESP8266 is checking for WiFi networks, and send the list through serial port:
 
-{% responsive_image path: images/posts/witty-mini/wifi-scan-example-output.png alt: "An example output from &quot;WiFiScan&quot; showing two WiFi networks listed" %}
+![An example output from &quot;WiFiScan&quot; showing two WiFi networks listed](images/posts/witty-mini/wifi-scan-example-output.png)
 
 So here you have a simple WiFi example. Of course it did not involve connecting to your network, and actually communicating with other devices. If you wish to try out a more advanced example I'll cover it in another blog post.
 
